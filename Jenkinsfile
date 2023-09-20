@@ -8,14 +8,16 @@ pipeline {
         }
         stage('Docker build') {
             steps {
+                sh(script: 'ls -at')
+                sh(script: 'which docker')
                 sh(script: 'docker images -a')
-                sh(script: """
-                    cd jenkins-ci-testing/
-                    docker images -a
-                    docker build -t jenkins-pipeline .
-                    docker images -a
-                    cd ..
-                """)
+                // sh(script: """
+                //     cd jenkins-ci-testing/
+                //     docker images -a
+                //     docker build -t jenkins-pipeline .
+                //     docker images -a
+                //     cd ..
+                // """)
             }
         }
     }
