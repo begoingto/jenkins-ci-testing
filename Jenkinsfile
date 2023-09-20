@@ -11,10 +11,7 @@ pipeline {
                 sh(script: 'ls -at')
                 sh(script: 'docker images')
                 sh(script: 'ls -at')
-                sh(script: 'export DOCKER_BUILDKIT=1')
-                sh(script: 'docker buildx version')
-                sh(script: 'docker buildx create --use')
-                // sh(script: 'docker build -t nd.begoingdev.me/nextjen:0.0.1 .')
+                sh(script: 'time docker build --progress=plain -t nd.begoingdev.me/nextjen:0.0.1 -f Dockerfile .')
                 // sh(script: 'docker login -u docker-repo -p 123 https://nd.begoingdev.me')
             }
         }
