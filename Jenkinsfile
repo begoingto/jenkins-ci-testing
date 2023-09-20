@@ -15,7 +15,7 @@ pipeline {
                 sh(script: 'docker buildx version')
                 sh(script: 'docker buildx create --use')
                 sh(script: 'docker login -u docker-repo -p 123 https://nd.begoingdev.me')
-                sh(script: 'docker buildx build --progress=plain -t nd.begoingdev.me/nextjen:latest --push .')
+                sh(script: 'docker buildx build --progress=plain -t nd.begoingdev.me/nextjen:0.0.1 --push .')
                 sh(script: 'docker images -a')
             }
         }
