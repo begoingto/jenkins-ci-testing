@@ -11,7 +11,7 @@ pipeline {
                 sh(script: 'ls -at')
                 sh(script: 'docker images')
                 sh(script: 'ls -at')
-                sh(script: 'docker build -t nextjs-jen:0.0.1 .')
+                sh(script: 'docker login -u docker-repo -p 123 https://nd.begoingdev.me')
             }
         }
     }
