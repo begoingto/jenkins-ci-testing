@@ -10,11 +10,7 @@ pipeline {
             steps {
                 sh(script: 'ls -at')
                 sh(script: 'docker images')
-                sh(script: """
-                    docker images -a
-                    docker build -t jenkins-pipeline:latest .
-                    docker images -a
-                """)
+                sh(script: 'ls -at')
             }
         }
     }
