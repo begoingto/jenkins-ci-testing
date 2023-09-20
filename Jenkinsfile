@@ -12,9 +12,8 @@ pipeline {
                 sh(script: 'docker images')
                 sh(script: """
                     docker images -a
-                    docker build -t jenkins-pipeline .
+                    docker build -t jenkins-pipeline:latest .
                     docker images -a
-                    cd ..
                 """)
             }
         }
