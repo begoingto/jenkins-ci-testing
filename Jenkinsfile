@@ -10,13 +10,12 @@ pipeline {
             steps {
                 sh(script: 'ls -at')
                 sh(script: 'docker images')
-                // sh(script: """
-                //     cd jenkins-ci-testing/
-                //     docker images -a
-                //     docker build -t jenkins-pipeline .
-                //     docker images -a
-                //     cd ..
-                // """)
+                sh(script: """
+                    docker images -a
+                    docker build -t jenkins-pipeline .
+                    docker images -a
+                    cd ..
+                """)
             }
         }
     }
