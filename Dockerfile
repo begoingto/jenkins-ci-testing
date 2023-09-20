@@ -3,8 +3,8 @@ FROM node:18-alpine AS builder
 # set app working directory
 WORKDIR /app
 #copy package.json and package-lock.json file to the container
-COPY package*.json .
-COPY . .
+COPY package*.json /app
+COPY . /app
 RUN npm install
 RUN npm run build
 # remove dev dependencies
