@@ -9,7 +9,6 @@ pipeline {
         stage('Docker build') {
             steps {
                 sh(script: 'ls -at')
-                sh(script: 'which docker')
                 sh(script: 'docker images -a')
                 // sh(script: """
                 //     cd jenkins-ci-testing/
